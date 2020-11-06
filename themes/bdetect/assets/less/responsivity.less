@@ -1,0 +1,117 @@
+
+@media (max-width: 644px) {
+    
+    .main-menu {
+        nav {
+        
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            z-index: -1;
+            position: fixed;
+            transition: all .6s;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            ul {
+                min-width: 300px;
+                font-size: 18px;
+                background-color: rgba(255,255,255, .5);
+                li {
+                    padding: 10px;
+                    font-weight: @font-medium;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #cccccc;
+                    }
+                    a {
+                        display: block;
+                        &::before {
+                            content: "—";
+                            color: #777777;
+                            margin-right: 6px;
+                        }
+                        &:hover {
+                            color: @active;
+                            &::after {
+                                content: "→";
+                                float: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        input#menu-shower:checked {
+            & ~ nav {
+                opacity: 1;
+                z-index: 2;
+                background-color: rgba(255,255,255, .9);
+            }
+        }
+    }
+    .report-scam {
+        margin: 0 auto;
+        .fields {
+            input {
+                width: 100%;
+                margin: 5px 0;
+                border-radius: 5px;
+            }
+        }
+        textarea {
+            margin-top: 5px;
+        }
+    }
+}
+@media (min-width: 645px) {
+    .main-menu.any-page {
+        .hamburger {
+            display: none;
+        }
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                
+                li {
+                    margin: 0 1vw;
+                    &:hover {
+                        color: @active;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .report-scam {
+        .fields {
+            display: flex;
+            margin: 5px 0;
+            align-items: center;
+            justify-content: space-between;
+            input {
+                width: 32.5%;
+                &:nth-child(1) {
+                    border-radius: 9px 0 0 9px;
+                }
+                &:nth-child(3) {
+                    border-radius: 0 9px 9px 0;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 645px) AND (max-width: 1024px) {
+    
+}
+@media (max-width: 1024px) {
+    
+}
+@media (min-width: 1025px) {
+    
+}

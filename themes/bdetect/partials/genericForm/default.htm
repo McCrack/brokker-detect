@@ -1,0 +1,35 @@
+[viewBag]
+==
+<form data-request="{{ __SELF__ }}::onFormSubmit" class="report-scam container">
+    {{ form_token() }}
+
+    <div id="{{ __SELF__ }}_forms_flash"></div>
+
+    
+        <div class="fields">
+            <input name="name"
+               type="text"
+               placeholder="Name*"
+               required>
+
+
+        <input name="email"
+               type="email"
+               placeholder="E-mail*"
+               required>
+
+
+        <input name="phone"
+               type="tel"
+               placeholder="Phone Number"
+               required>
+        </div>
+        <textarea name="message"
+                  cols="30"
+                  placeholder="Message"
+                  rows="10"></textarea>
+        <div class="text-right py-5">
+            <button id="simpleContactSubmitButton" type="submit" class="btn rounded-5 primary-bg white-txt cursor-pointer py-10 px-20 font-13">Submit</button>
+        </div>
+    
+</form>

@@ -1,0 +1,155 @@
+title = "broker"
+url = "/broker/:slug"
+layout = "default"
+is_hidden = 0
+==
+<div class="flex-ls align-stretch mt-30 container">
+    <div class="relative p-20">
+        <div class="spinner full-width">
+            <img src="{{ 'assets/images/theme-preview.png'|theme }}" alt="" class="slide active">
+            <img src="{{ 'assets/images/theme-preview.png'|theme }}" alt="" class="slide">
+            <img src="{{ 'assets/images/theme-preview.png'|theme }}" alt="" class="slide">
+        </div>
+
+        <button class="absolute left-10 z-index-3">LEFT</button>
+        <button class="absolute right-10 z-index-3">RIGHT</button>
+        
+        <div class="previews grid" style="grid-template-columns: repeat(5, 1fr)">
+            <img src="{{ 'assets/images/theme-preview.png'|theme }}" alt="" class="active">
+            <img src="{{ 'assets/images/theme-preview.png'|theme }}" alt="">
+            <img src="{{ 'assets/images/theme-preview.png'|theme }}" alt="">
+        </div>
+        
+        
+        <script>
+            (slider => {
+                var interval;
+                let slides = slider.querySelectorAll('.slide');
+                let points = slider.querySelectorAll('.slide-point > input');
+                let current = 0;
+                slider.onchange = event => {
+                    clearInterval(interval)
+                    points.forEach((point, i) => {
+                        if (point.contains(event.target)) {
+                            setSlide(i);
+                        }
+                    })
+                }
+                function setSlide(slide) {
+                    slides[current].classList.toggle('active', false);
+                    slides[current].classList.toggle('hide', true);
+                    slides[slide].classList.toggle('active', true);
+                    points[slide].checked = true;
+                    setTimeout(() => {
+                        slides[current].classList.toggle('hide', false);
+                        current = slide;
+                    }, 600)
+                }
+                function autoplay () {
+                    interval = setInterval(() => {
+                        if (current + 1 >= slides.length) {
+                            setSlide(0);
+                        } else {
+                            setSlide(current + 1);
+                        }
+                    }, 6000);
+                }
+
+                autoplay();
+            })(document.currentScript.parentNode)
+        </script>
+    </div>
+    <div class="p-20 flex-grow flex-center-center">
+        <table class="specifics" width="100%" cellpadding="8" cellspacing="0">
+            <tbody align="left">
+                <tr>
+                    <th>Headquarters</th>
+                    <td>Cyprus</td>
+                </tr>
+                <tr>
+                    <th>Regulation and License</th>
+                    <td>CySEC, FSC</td>
+                </tr>
+                <tr>
+                    <th>Platforms</th>
+                    <td>MT4, cTrader, Skilling Trader</td>
+                </tr>
+                <tr>
+                    <th>Instruments</th>
+                    <td>Currency pairs and CFDs on Stocks, Indices, Energies, Metals, 10 Cryptocurrencies</td>
+                </tr>
+                <tr>
+                    <th>Demo Account</th>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <th>Minimum deposit</th>
+                    <td>100$</td>
+                </tr>
+                <tr>
+                    <th>Base currencies</th>
+                    <td>Several currencies</td>
+                </tr>
+                <tr>
+                    <th>Education</th>
+                    <td>No education provided. Research tools.</td>
+                </tr>
+                <tr>
+                    <th>Customer Support</th>
+                    <td>24/5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="text-container py-40">
+    <article class="content mb-30">
+        <header>
+            <h1>Nemo enim ipsam voluptatem</h1>
+        </header>
+        
+        <p>
+        Nemo enim ipsam voluptatem, quis nostrum exercitationem 
+        ullam corporis suscipit laboriosam, sunt in culpa qui 
+        officia deserunt mollit anim id est laborum?
+        </p>
+        <p>
+        Sed ut perspiciatis, quia voluptas sit, aspernatur aut odit 
+        aut fugit, sed quia consequuntur magni dolores eos, qui 
+        ratione voluptatem sequi nesciunt, neque porro quisquam est, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum!
+        </p>
+        <blockquote>
+            <p>
+            Itaque earum rerum hic tenetur a sapiente delectus, quia voluptas sit, 
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, 
+            qui ratione voluptatem sequi nesciunt, neque porro quisquam est, ut aut 
+            reiciendis voluptatibus maiores alias consequatur aut perferendis 
+            doloribus asperiores repellat
+            </p>
+        </blockquote>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Adipisci aliquam assumenda doloremque et exercitationem labore 
+        obcaecati odit possimus saepe velit! Accusantium dolore enim 
+        incidunt iure nobis odit saepe velit, voluptates?
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Adipisci aliquam assumenda doloremque et exercitationem labore 
+        obcaecati odit possimus saepe velit! Accusantium dolore enim 
+        incidunt iure nobis odit saepe velit, voluptates?
+        </p>
+        
+        <div class="mt-30 p-10 text-right border-top-dark">
+            <div class="inline-block">
+                <div class="flex-between-center font-14">
+                    <span class="font-medium">{{ post.user.first_name }} {{ post.user.last_name }}</span>
+                    <hr class="separator mx-10 my-0 primary-bg">
+                    <span class="font-light">{{ post.published_at|date('d M, Y') }}</span>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

@@ -1,0 +1,24 @@
+title = "home"
+url = "/"
+layout = "home"
+is_hidden = 0
+==
+<form action="" class="search fixed-center text-center" autocomplate="off">
+    <img src="{{ 'assets/images/logo.png'|theme }}" alt="LOGO">
+    <div class="field p-5 m-10 relative z-index-1">
+        <input type="text"
+               class="transparent"
+               placeholder="...">
+        <div class="placeholder absolute left-10 right-10 flex-between-center">
+            <span>Enter broker name</span>
+            <img src="{{ 'assets/images/search.png'|theme }}" alt="Search" class="full-height">
+        </div>
+        
+        <div class="result-box absolute text-left">
+            <a href=""><img src="{{ 'assets/images/logo.png'|theme }}" alt="">Broker 1</a>
+            <a href=""><img src="{{ 'assets/images/logo.png'|theme }}" alt="">Broker 2</a>
+            <a href=""><img src="{{ 'assets/images/logo.png'|theme }}" alt="">Broker 3</a>
+            <a href=""><img src="{{ 'assets/images/logo.png'|theme }}" alt="">Broker 4</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,254 @@
+@import "variables";
+@import "fonts";
+@import "theme";
+@import "content";
+@import "responsivity";
+
+
+:root {
+    scroll-behavior: smooth;
+}
+
+
+/*~~~~~*** LAYOUT ***~~~~~*/
+
+body {
+    font-size: @rem;
+    font-family: Roboto;
+
+    & > header {
+        height: 32px;
+        padding: 10px;
+        border-bottom: 1px solid #cccccc;
+        
+        .main-menu {
+            nav {
+                ul {
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        &.active {
+                            color: @active;
+                        }
+                    }
+                }
+            }
+        }
+        .hamburger {
+            z-index: 3;
+            position: relative;
+            transition: all .3s;
+            .grid {
+                width: 30px;
+                height: 30px;
+                grid-gap: 5px;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                span {
+                    background-color: silver;
+                    transition: background-color .3s;
+                }
+            }
+        }
+        input#menu-shower:checked {
+            & + label {
+                transform: rotate(45deg);
+                background-color: gray;
+                .grid { 
+                    span {
+                        background-color: white;
+                    }
+                }
+            }
+        }
+        
+        &.home-header {
+            
+            .main-menu {
+                nav {
+        
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                    z-index: -1;
+                    position: fixed;
+                    transition: all .6s;
+        
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+        
+                    ul {
+                        padding: 0;
+                        min-width: 300px;
+                        font-size: 18px;
+                        list-style-type: none;
+                        background-color: white;
+                        li {
+                            padding: 10px;
+                            font-weight: @font-medium;
+                            &:not(:last-child) {
+                                border-bottom: 1px solid #cccccc;
+                            }
+                            a {
+                                display: block;
+                                &::before {
+                                    content: "—";
+                                    color: #777777;
+                                    margin-right: 6px;
+                                }
+                                &:hover {
+                                    color: @active;
+                                    &::after {
+                                        content: "→";
+                                        float: right;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+    
+            
+            input#menu-shower:checked {
+                & ~ nav {
+                    opacity: 1;
+                    z-index: 2;
+                    background-color: rgba(255,255,255, .7);
+                }
+            }
+        }
+        
+        
+        
+            
+        }
+    }
+    & > main {
+
+	}
+
+	& > footer {
+
+	}
+}
+
+.text-container {
+    margin: 0 auto;
+}
+
+
+/*~~~~~* COMPONENTS *~~~~~*/
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+figure {
+    margin: 0;
+}
+tr:nth-child(odd) {
+    background-color: white;
+}
+tr:nth-child(even) {
+    background-color: @disabled;
+}
+
+.btn {
+    border: none;
+}
+.separator {
+    width: 1px;
+    border: none;
+    min-height: 20px
+}
+
+.search {
+    width: 100%;
+    max-width: 600px;
+    overflow: visible;
+    .field {
+        border-radius: 17px;
+        border: 1px solid #dddddd;
+        box-sizing: border-box;
+        box-shadow: 0 10px 20px -18px rgba(0,0,0, .4);
+        & > input {
+            width: 100%;
+            height: 36px;
+            border: none;
+            text-align: center;
+            transition: background-color .5s;
+            & + .placeholder {
+                top: 50%;
+                z-index: -1;
+                height: 28px;
+                color: #888888;
+                font-weight: @font-light;
+                transform: translateY(-50%);
+            }
+            &:focus {
+                background-color: white;
+            }
+            &:not(:focus) ~ .result-box{
+                display: none;
+            }
+        }
+        .result-box {
+            top: 35px;
+            left: -1px;
+            right: -1px;
+            padding-top: 2px;
+            min-height: 80px;
+            overflow: hidden;
+            background-color: white;
+            border: 1px solid #dddddd;
+            border-top-width: 0;
+            border-radius: 0 0 17px 17px;
+            box-shadow: 0 10px 20px -18px rgba(0,0,0, .4);
+            a {
+                font-size: 14px;
+                display: block;
+                padding: 5px 20px;
+                &:nth-child(even) {
+                    background-color: white;
+                }
+                &:nth-child(odd) {
+                    background-color: @disabled;
+                }
+                img {
+                    width: 48px;
+                    height: 30px;
+                    margin-right: 10px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+/*~~~~* FORM CONTROLS *~~~~*/
+
+input,
+textarea {
+    padding: 8px 10px;
+    border: 1px solid #bbbbbb;
+    box-sizing: border-box;
+}
+
+.report-scam {
+        padding: 10px;
+        max-width: 450px;
+        box-sizing: border-box;
+        textarea {
+            width: 100%;
+            resize: none;
+            border-radius: 9px;
+        }
+    }

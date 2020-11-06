@@ -1,0 +1,50 @@
+items:
+    -
+        title: Home
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Chargeback
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: recover-your-funds
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Report fraud'
+        type: url
+        url: report-fraud
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Glossory
+        nesting: null
+        type: url
+        url: /glossory
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: main

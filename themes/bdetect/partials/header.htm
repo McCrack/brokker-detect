@@ -1,0 +1,24 @@
+description = "Page Header"
+
+[staticMenu]
+code = "main"
+
+[viewBag]
+==
+<header class="white-bg flex-between-center">
+    <a href="{{ 'home'|page }}" class="logo font-none inline-blok full-height relative z-index-3"><img src="{{ 'assets/images/logo.png'|theme }}" alt="LOGO" class="full-height"></a>
+    <div class="main-menu any-page">
+        <input id="menu-shower" type="checkbox" autocomplete="off" hidden>
+        <label class="hamburger inline-block cursor-pointer" for="menu-shower">
+            <span class="grid">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </label>
+        <nav role="navigation">
+            {% component 'staticMenu' %}
+        </nav>
+    </div>
+</header>

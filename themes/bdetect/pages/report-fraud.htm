@@ -1,0 +1,25 @@
+title = "Report fraud"
+url = "/report-fraud"
+layout = "default"
+is_hidden = 0
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<div class="flex-ls justify-evenly align-center py-40" style="min-height: 80vh;">
+    <div class="px-20">
+        {% content 'static-pages/report-fraud' %}
+    </div>
+    
+    <div class="">
+        {% component 'genericForm' %}
+    </div>
+</div>

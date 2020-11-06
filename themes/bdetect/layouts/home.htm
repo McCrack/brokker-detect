@@ -1,0 +1,60 @@
+description = "Home Layout"
+
+[staticMenu]
+code = "main"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.png'|theme }}">
+
+    <link href="{{ 'assets/vendor/normalize.css'|theme }}" rel="stylesheet">
+    <link href="{{ ['assets/less/index.less']|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/c-bble.css'|theme }}" rel="stylesheet">
+    
+    {% styles %}
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="home-header absolute top-5 right-5">
+        <div class="main-menu">
+            <input id="menu-shower" type="checkbox" autocomplete="off" hidden>
+            <label class="hamburger inline-block cursor-pointer" for="menu-shower">
+                <span class="grid">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </label>
+            <nav role="navigation">
+                {% component 'staticMenu' %}
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% page %}
+    </main>
+    
+    <!-- copyright -->
+    <div class="copyright fixed bottom full-width p-10 disabled-bg">
+        <div class="p-5 gray-txt font-13 text-center font-medium">Copyright &copy; {{ "now"|date("Y") }} Broker Detect</div>
+    </div>
+    
+
+    <!-- Scripts -->
+    {# <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script> #}
+    
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+    
+    {% framework extras %}
+    {% scripts %}
+
+</body>
+</html>
