@@ -233,6 +233,46 @@ tr:nth-child(even) {
     }
 }
 
+.spinner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .slide {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        transition: all .8s linear;
+        
+        &:not(.active) {
+            left: 140%;
+            z-index: -1;
+        }
+        &.hide {
+            left: -140%;
+        }
+        &.active {
+            left: 0;
+        }
+    }
+    .slide-point {
+        margin: 0 2px;
+        cursor: pointer;
+        hr {
+            height: 10px;
+            width: 20px;
+            border: 1px solid #aaaaaa;
+        }
+        input:not(:checked) + hr {
+            background-color: @primary;
+        }
+        input:checked + hr {
+            background-color: @danger;
+        }
+    }
+}
+
 /*~~~~* FORM CONTROLS *~~~~*/
 
 input,
