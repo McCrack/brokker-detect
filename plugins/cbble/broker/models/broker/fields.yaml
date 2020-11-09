@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        span: left
+    name:
+        label: 'Broker Name'
+        required: true
+        span: auto
+    slug:
+        label: Slug
+        span: auto
+        required: true
+        preset:
+            field: name
+            type: slug
+    title:
+        label: Title
+        type: text
+        span: auto
+        placeholder: ...
+    Published:
+        label: Published
+        span: auto
+        type: switch
+
+    excerpt:
+        label: Excerpt (Description)
+        type: textarea
+        span: full
+        placeholder: ...
+        size: small
+    content:
+        label: Content
+        type: Backend\FormWidgets\RichEditor
+        size: giant

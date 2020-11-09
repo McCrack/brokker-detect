@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Broker
+
+# Model Form Field configuration
+form: $/cbble/broker/models/broker/fields.yaml
+
+# Model Class name
+modelClass: Cbble\Broker\Models\Broker
+
+# Default redirect location
+defaultRedirect: cbble/broker/brokers
+
+# Create page
+create:
+    title: Create Broker
+    redirect: cbble/broker/brokers/update/:id
+    redirectClose: cbble/broker/brokers
+
+# Update page
+update:
+    title: Edit Broker
+    redirect: cbble/broker/brokers
+    redirectClose: cbble/broker/brokers
+
+# Preview page
+preview:
+    title: Preview Broker

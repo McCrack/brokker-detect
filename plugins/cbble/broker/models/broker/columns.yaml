@@ -1,0 +1,31 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        sortable: true
+    name:
+        label: 'Broker Name'
+        searchable: true
+        sortable: true
+    title:
+        label: Title
+        searchable: false
+        sortable: false
+    trusted:
+        label: Trusted
+        searchable: false
+        sortable: false
+    created_at:
+        label: Создано
+        type: date
+        searchable: false
+        sortable: true
+    updated_at:
+        label: Обновлено
+        type: date
+        searchable: false
+        sortable: true

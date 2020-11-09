@@ -72,24 +72,14 @@ class MailPartial extends Model
      */
     public static function createPartials()
     {
-        $partials = MailManager::instance()->listRegisteredPartials();
-        $dbPartials = self::lists('is_custom', 'code');
-        $newPartials = array_diff_key($partials, $dbPartials);
+        $dbPartials = self::lists('code', 'code');
 
-        /*
-         * Clean up non-customized partials
-         */
-        foreach ($dbPartials as $code => $isCustom) {
-            if ($isCustom) {
+        $definitions = MailManager::instance()->listRegisteredPartials();
+        foreach ($definitions as $code => $path) {
+            if (array_key_exists($code, $dbPartials)) {
                 continue;
             }
 
-            if (!array_key_exists($code, $partials)) {
-                self::whereCode($code)->delete();
-            }
-        }
-
-        foreach ($newPartials as $code => $path) {
             $partial = new static;
             $partial->code = $code;
             $partial->is_custom = 0;
