@@ -3,31 +3,66 @@
 # ===================================
 
 fields:
+    logo:
+        label: Logo
+        type: fileupload
+        span: right
+        attributes:
+            style: 'max-width: 280px;object-fit: contain'
     id:
         label: ID
         disabled: true
         span: left
+        attributes:
+            style: 'width: 100px'
     name:
         label: 'Broker Name'
         required: true
-        span: auto
+        span: left
     slug:
         label: Slug
-        span: auto
+        span: left
         required: true
         preset:
-            field: name
+            field: title
             type: slug
+    attachments:
+        label: Images
+        type: fileupload
+        span: right
     title:
         label: Title
         type: text
-        span: auto
+        span: left
         placeholder: ...
-    Published:
+    status:
+        label: Status
+        type: dropdown
+        options:
+            scam: Scam
+            trusted: Trusted
+        span: left
+    published:
         label: Published
-        span: auto
         type: switch
-
+        span: left
+    specifics:
+        type: datatable
+        adding: true
+        columns:
+            name:
+                type: string
+                title: Name
+            value:
+                type: string
+                title: Value
+        deleting: true
+        dynamicHeight: true
+        fieldName: null
+        height: false
+        keyFrom: id
+        postbackHandlerName: null
+        recordsPerPage: false
     excerpt:
         label: Excerpt (Description)
         type: textarea
@@ -36,5 +71,5 @@ fields:
         size: small
     content:
         label: Content
-        type: Backend\FormWidgets\RichEditor
+        type: richeditor
         size: giant

@@ -20,7 +20,7 @@ body {
         height: 32px;
         padding: 10px;
         border-bottom: 1px solid #cccccc;
-        
+
         .main-menu {
             nav {
                 ul {
@@ -54,19 +54,19 @@ body {
             & + label {
                 transform: rotate(45deg);
                 background-color: gray;
-                .grid { 
+                .grid {
                     span {
                         background-color: white;
                     }
                 }
             }
         }
-        
+
         &.home-header {
-            
+
             .main-menu {
                 nav {
-        
+
                     top: 0;
                     left: 0;
                     right: 0;
@@ -75,11 +75,11 @@ body {
                     z-index: -1;
                     position: fixed;
                     transition: all .6s;
-        
+
                     display: flex;
                     align-items: center;
                     justify-content: center;
-        
+
                     ul {
                         padding: 0;
                         min-width: 300px;
@@ -110,8 +110,8 @@ body {
                         }
                     }
                 }
-    
-            
+
+
             input#menu-shower:checked {
                 & ~ nav {
                     opacity: 1;
@@ -120,10 +120,10 @@ body {
                 }
             }
         }
-        
-        
-        
-            
+
+
+
+
         }
     }
     & > main {
@@ -229,6 +229,9 @@ tr:nth-child(even) {
                     object-fit: contain;
                 }
             }
+            &:hover {
+                display: block !important;
+            }
         }
     }
 }
@@ -270,10 +273,13 @@ tr:nth-child(even) {
         }
     }
     .previews {
-        padding: 6px;
-        grid-gap: 6px;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 8px;
         img {
+            margin: 4px;
+            min-width: 80px;
+            max-width: 120px;
+            height: 68px;
+            object-fit: contain;
             cursor: pointer;
             border-radius: 5px;
             border: 1px solid #dddddd;
@@ -291,12 +297,24 @@ textarea {
 }
 
 .report-scam {
-        padding: 10px;
-        max-width: 450px;
-        box-sizing: border-box;
-        textarea {
-            width: 100%;
-            resize: none;
-            border-radius: 9px;
-        }
+    padding: 10px;
+    max-width: 450px;
+    box-sizing: border-box;
+    textarea {
+        width: 100%;
+        resize: none;
+        border-radius: 9px;
     }
+}
+
+.definition {
+    transition: max-height .5s;
+    &:target {
+        /*max-height: 100vh;*/
+    }
+    &:not(:target) {
+        /*max-height: 0;*/
+        display: none;
+    }
+}
+

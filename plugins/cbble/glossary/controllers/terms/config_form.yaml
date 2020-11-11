@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Term
+
+# Model Form Field configuration
+form: $/cbble/glossary/models/term/fields.yaml
+
+# Model Class name
+modelClass: CBBLe\Glossary\Models\Term
+
+# Default redirect location
+defaultRedirect: cbble/glossary/terms
+
+# Create page
+create:
+    title: Create Term
+    redirect: cbble/glossary/terms/update/:id
+    redirectClose: cbble/glossary/terms
+
+# Update page
+update:
+    title: Edit Term
+    redirect: cbble/glossary/terms
+    redirectClose: cbble/glossary/terms
+
+# Preview page
+preview:
+    title: Preview Term

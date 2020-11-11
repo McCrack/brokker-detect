@@ -15,17 +15,20 @@ columns:
         label: Title
         searchable: false
         sortable: false
-    trusted:
-        label: Trusted
+    status:
+        label: Status
         searchable: false
-        sortable: false
+        sortable: true
     created_at:
-        label: Создано
+        label: Created
         type: date
         searchable: false
         sortable: true
     updated_at:
-        label: Обновлено
+        label: Updated
         type: date
         searchable: false
         sortable: true
+    published:
+        label: Published
+        type: switch

@@ -1,5 +1,4 @@
-1.0.2:
+1.0.3:
     - Migrations
     - create_brokers_table.php
-
 1.0.1: First version of broker

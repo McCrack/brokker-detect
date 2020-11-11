@@ -1,0 +1,8 @@
+
+<ul class="index col-4 p-0 none-marker">
+    {% for item in indexes %}
+    <li class="inline-block full-width py-10 text-center underline font-18 hover-danger-txt hover-font-medium">
+        <a href="#{{ item.index }}">{{ item.index }}</a>
+    </li>
+    {% endfor %}
+</ul>

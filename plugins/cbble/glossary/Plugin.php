@@ -1,10 +1,10 @@
-<?php namespace CBBLe\Broker;
+<?php namespace CBBLe\Glossary;
 
 use Backend;
 use System\Classes\PluginBase;
 
 /**
- * broker Plugin Information File
+ * Glossary Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -16,10 +16,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Brokers',
+            'name'        => 'Glossary',
             'description' => 'No description provided yet...',
             'author'      => 'CBBLe',
-            'icon'        => 'icon-area-chart'
+            'icon'        => 'icon-leaf'
         ];
     }
 
@@ -51,7 +51,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'CBBLe\Broker\Components\Broker' => 'Broker',
+            'CBBLe\Glossary\Components\Index' => 'Index',
+            'CBBLe\Glossary\Components\Wordlist' => 'Wordlist',
         ];
     }
 
@@ -65,8 +66,8 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'cbble.broker.some_permission' => [
-                'tab' => 'broker',
+            'cbble.glossary.some_permission' => [
+                'tab' => 'Glossary',
                 'label' => 'Some permission'
             ],
         ];
@@ -80,11 +81,11 @@ class Plugin extends PluginBase
     public function registerNavigation()
     {
         return [
-            'broker' => [
-                'label'       => 'Brokers',
-                'url'         => Backend::url('cbble/broker/brokers'),
-                'icon'        => 'icon-area-chart',
-                'permissions' => ['cbble.broker.*'],
+            'glossary' => [
+                'label'       => 'Glossary',
+                'url'         => Backend::url('cbble/glossary/terms'),
+                'icon'        => 'icon-list-alt',
+                'permissions' => ['cbble.glossary.*'],
                 'order'       => 500,
             ],
         ];

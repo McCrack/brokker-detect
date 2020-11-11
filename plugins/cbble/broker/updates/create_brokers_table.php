@@ -9,16 +9,18 @@ class CreateBrokersTable extends Migration
     public function up()
     {
         Schema::create('cbble_broker_brokers', function (Blueprint $table) {
+
+            Schema::dropIfExists('cbble_broker_brokers');
+
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('logo', 128)->nullable();
             $table->string('name', 64);
             $table->string('slug', 64);
             $table->string('title')->nullable();
+            $table->enum('status', ['scam', 'trusted'])->default('scam');
+            $table->json('specifics')->nullable();
             $table->text('excerpt')->nullable();
             $table->longText('content')->nullable();
-            $table->json('images');
-            $table->boolean('trusted')->default(false);
             $table->boolean('published')->default(false);
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

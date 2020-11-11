@@ -27,22 +27,22 @@ items:
             isExternal: '0'
     -
         title: 'Report fraud'
+        nesting: null
         type: url
         url: report-fraud
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Glossory
-        nesting: null
+        title: Glossary
         type: url
-        url: /glossory
+        url: /glossary
         code: ''
-        reference: null
-        cmsPage: null
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''

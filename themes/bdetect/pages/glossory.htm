@@ -1,16 +1,28 @@
-title = "Glossory"
-url = "/glossory"
+title = "Glossary"
+url = "/glossary"
 layout = "default"
 is_hidden = 0
+
+[Index]
+
+[Wordlist]
 ==
-<div class="flex-center-center" style="min-height: 60vh">
+<div class="glossary">
+    <div class="flex-ls align-center justify-evenly" style="min-height: 60vh">
+        <article class="max-w-640">
+            <h1>Glossary</h1>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Alias amet commodi deleniti dolores doloribus esse fugiat
+            fugit illo laudantium necessitatibus nulla numquam optio
+            pariatur quam, quas recusandae reprehenderit sequi similique!
+            </p>
+        </article>
+        
+        {% component 'Index' %}
+    </div>
+    
     <div class="container">
-        <h1>Glossory</h1>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Alias amet commodi deleniti dolores doloribus esse fugiat 
-        fugit illo laudantium necessitatibus nulla numquam optio 
-        pariatur quam, quas recusandae reprehenderit sequi similique!
-        </p>
+        {% component 'Wordlist' %}
     </div>
 </div>

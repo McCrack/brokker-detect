@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    index:
+        label: Index
+        searchable: false
+        sortable: true
+    term:
+        label: Term
+

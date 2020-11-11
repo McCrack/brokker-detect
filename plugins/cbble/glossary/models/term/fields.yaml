@@ -1,0 +1,37 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        span: left
+        attributes:
+            style: 'width: 80px'
+    index:
+        label: Index
+        required: true
+        span: right
+        placeholder: 'A - Z'
+        attributes:
+            style: 'width: 80px'
+    term:
+        label: Term
+        required: true
+        placeholder: '...'
+        span: left
+    slug:
+        label: Slug
+        required: true
+        placeholder: '...'
+        span: right
+        preset:
+            field: term
+            type: slug
+    definition:
+        label: Definition
+        span: full
+        type: richeditor
+        size: giant
+        placeholder: '...'

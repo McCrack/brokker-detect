@@ -1,18 +1,18 @@
-<?php namespace Cbble\Broker\Models;
+<?php namespace CBBLe\Glossary\Models;
 
 use Model;
 
 /**
- * broker Model
+ * term Model
  */
-class Broker extends Model
+class Term extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'cbble_broker_brokers';
+    public $table = 'cbble_glossary_terms';
 
     /**
      * @var array Guarded fields
@@ -37,9 +37,7 @@ class Broker extends Model
     /**
      * @var array Attributes to be cast to JSON
      */
-    protected $jsonable = [
-        'specifics'
-    ];
+    protected $jsonable = [];
 
     /**
      * @var array Attributes to be appended to the API representation of the model (ex. toArray())
@@ -64,17 +62,11 @@ class Broker extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $hasOneThrough = [];
-    public $hasManyThrough = [];
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [
-        'logo' => ['System\Models\File'],
-    ];
-    public $attachMany = [
-        'attachments' => ['System\Models\File'],
-    ];
+    public $attachOne = [];
+    public $attachMany = [];
 }

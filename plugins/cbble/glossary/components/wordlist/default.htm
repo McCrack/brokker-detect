@@ -1,0 +1,25 @@
+
+{% set index = '' %}
+
+<div class="content">
+
+    {% for key, terms in wordlist %}
+    <p id="{{ key }}" class="h1 underline">{{ key }}</p>
+    <ul class="term col-2-pt col-4-ls p-0 none-marker">
+        {% for item in terms %}
+        <li>
+            <a href="#{{ item.slug }}" class="underline hover-danger-txt">{{ item.term }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="border-bottom-light rounded-3">
+
+        {% for item in terms %}
+        <div id="{{ item.slug }}" class="definition px-10 overflow-hidden">
+            <h3 class="danger-txt">{{ item.term }}</h3>
+            {{ item.definition|raw }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
